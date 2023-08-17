@@ -95,57 +95,76 @@
 				</svg>
 			</div>
 			<div class="form-container">
-				<h3>Let's do this!</h3>
-				<p><span class="required">*</span> indicates a required field</p>
-				<form action="post">
-					<div id="first-name">
+				<h1>Let's do this!</h1>
+				<p>
+					<span class="required">*</span> indicates a required field
+					<span class="jk reddish"> They're all required obviously </span>
+				</p>
+				<form action="post" id="firstform">
+					<div class="r" id="first-name">
 						<label for="first_name"
 							><span class="required">*</span>First name</label
 						>
 						<input
+							class="r"
 							type="text"
-							name="first_name"
+							name="userfirstname"
 							id="first_name"
 							required
 							minlength="3"
-							maxlength="15" />
+							maxlength="15"
+							autocomplete="name" />
 					</div>
-					<div id="second-name">
-						<label for="last_name">Last name</label>
-						<input type="text" name="last_name" id="last_name" />
+					<div id="second-name" class="r">
+						<label for="last_name"
+							><span class="required">*</span>Last name</label
+						>
+						<input
+							type="text"
+							name="userlastname"
+							id="last_name"
+							autocomplete="family-name"
+							required />
 					</div>
 					<div id="email">
 						<label for="user_mail"><span class="required">*</span>Email</label>
 						<input
 							type="email"
-							name="user_mail"
+							name="usermail"
 							id="user_mail"
 							required
 							minlength="3"
-							pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" />
+							autocomplete="email" />
 					</div>
-					<div id="phone-number">
-						<label for="phone-number"
+					<div id="phone-number" class="r">
+						<label for="phonenumber"
 							><span class="required">*</span>Phone Number</label
-						><input type="tel" name="phone-number" id="phone-number" required />
+						><input
+							type="tel"
+							name="userphonenumber"
+							id="phonenumber"
+							required />
 					</div>
 					<div id="passwordcontainer" class="password">
 						<label for="password"><span class="required">*</span>Password</label
 						><input
 							type="password"
-							name="password"
+							name="userpassword"
 							id="password"
 							required
 							minlength="8"
-							maxlength="15"
 							pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" />
 					</div>
-					<div id="confirm-password">
+					<div id="confirm-password" class="r">
 						<label for="confirm"
 							><span class="required">*</span>Confirm Password</label
-						><input type="password" name="confirm" id="confirm" required />
+						><input
+							type="password"
+							name="user-password-confirm"
+							id="confirm"
+							required />
 					</div>
-					<div class="alerts" id="alerts">
+					<div class="alerts" id="alerts" class="r">
 						<p>
 							Your password needs to:
 							<br />
@@ -158,10 +177,23 @@
 						</p>
 					</div>
 					<div class="btn">
-						<button type="submit" value="Submit" id="submit">
+						<button
+							onclick="toastFunction()"
+							type="submit"
+							value="Submit"
+							class="login"
+							id="submit">
 							Create Account
 						</button>
-						<p>Already have an account? <a href="#">Login</a></p>
+						<div id="toast">
+							<div class="checkicon"><i class="fas fa-check-square"></i></div>
+							We have received your registration!
+							<span class="jk">jk this is a demo.</span>
+						</div>
+						<div class="loging">
+							<p style="display: inline">Already have an account?</p>
+							<a href="#" id="login">Login</a>
+						</div>
 					</div>
 				</form>
 			</div>

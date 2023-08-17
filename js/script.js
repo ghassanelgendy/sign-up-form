@@ -8,13 +8,22 @@ const inputs = document.querySelectorAll("input");
 const passcontainer = document.getElementById("passwordcontainer");
 const alerts = document.getElementById("alerts");
 const btn = document.querySelector(".btn");
-const nums = document.querySelector(".number");
+const numbs = document.querySelector(".number");
 const len = document.querySelector(".len");
 const lower = document.querySelector(".lower-upper");
+const first_form = document.getElementById("firstform");
+const login_btn = document.getElementById("login");
+let first_click = true;
+let mode = true;
 
+first_form.addEventListener("submit", (e) => {
+	e.preventDefault();
+});
 password.addEventListener("focus", () => {
-	alerts.classList.add("shown");
-	btn.classList.add("down");
+	if (mode) {
+		alerts.classList.add("shown");
+		btn.classList.add("down");
+	}
 });
 password.addEventListener("blur", () => {
 	alerts.classList.remove("shown");
@@ -22,9 +31,9 @@ password.addEventListener("blur", () => {
 });
 password.addEventListener("keyup", () => {
 	if (/\d/.test(password.value)) {
-		nums.style.color = "#1b4543";
+		numbs.style.color = "#1b4543";
 	} else {
-		nums.style.color = "var(--red-clr)";
+		numbs.style.color = "var(--red-clr)";
 	}
 	if (/(?=.*[a-z])(?=.*[A-Z])/.test(password.value)) {
 		lower.style.color = "#1b4543";
@@ -51,5 +60,36 @@ confirmation.addEventListener("keyup", () => {
 		console.log("sah");
 	} else {
 		confirmation.style.borderColor = "var(--red-clr)";
+	}
+});
+function toastFunction() {
+	var x = document.getElementById("toast");
+	x.className = "show";
+	setTimeout(function () {
+		x.className = x.className.replace("show", "");
+	}, 3000);
+}
+
+login_btn.addEventListener("click", (e) => {
+	const registrations = document.querySelectorAll(".r");
+	console.log(mode);
+	if (mode) {
+		mode = false;
+		registrations.forEach((reg) => {
+			reg.classList.add("displaynone");
+			first_form.style.flexDirection = "column";
+		});
+		login_btn.previousElementSibling.textContent = "Don't have an account?";
+		submits.textContent = "Login";
+		login_btn.textContent = "Register";
+	} else {
+		mode = true;
+		registrations.forEach((reg) => {
+			first_form.style.flexDirection = "row";
+			reg.classList.remove("displaynone");
+		});
+		login_btn.previousElementSibling.textContent = "Already have an account?";
+		submits.textContent = "Create Account";
+		login_btn.textContent = "Login";
 	}
 });
