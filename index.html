@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Title</title>
+		<title>Sign Up</title>
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/reset.css" />
 		<link
@@ -96,6 +96,7 @@
 			</div>
 			<div class="form-container">
 				<h3>Let's do this!</h3>
+				<p><span class="required">*</span> indicates a required field</p>
 				<form action="post">
 					<div id="first-name">
 						<label for="first_name"
@@ -121,14 +122,14 @@
 							id="user_mail"
 							required
 							minlength="3"
-							maxlength="15" />
+							pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" />
 					</div>
 					<div id="phone-number">
 						<label for="phone-number"
 							><span class="required">*</span>Phone Number</label
 						><input type="tel" name="phone-number" id="phone-number" required />
 					</div>
-					<div id="password">
+					<div id="passwordcontainer" class="password">
 						<label for="password"><span class="required">*</span>Password</label
 						><input
 							type="password"
@@ -137,18 +138,32 @@
 							required
 							minlength="8"
 							maxlength="15"
-							pattern="//" />
+							pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" />
 					</div>
 					<div id="confirm-password">
 						<label for="confirm"
 							><span class="required">*</span>Confirm Password</label
 						><input type="password" name="confirm" id="confirm" required />
 					</div>
+					<div class="alerts" id="alerts">
+						<p>
+							Your password needs to:
+							<br />
+							<span class="lower-upper"
+								>-include both lower and upper case characters.</span
+							>
+							<br />
+							<span class="number">-include at least one number.</span> <br />
+							<span class="len">-be at least 8 characters long.</span>
+						</p>
+					</div>
+					<div class="btn">
+						<button type="submit" value="Submit" id="submit">
+							Create Account
+						</button>
+						<p>Already have an account? <a href="#">Login</a></p>
+					</div>
 				</form>
-				<div class="btn">
-					<button>Create Account</button>
-					<p>Already have an account? <a href="#">Login</a></p>
-				</div>
 			</div>
 		</div>
 		<script src="./js/script.js"></script>
