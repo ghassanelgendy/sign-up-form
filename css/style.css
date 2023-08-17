@@ -13,7 +13,6 @@ body {
         sans-serif;
     font-family: 'Space Grotesk',
         sans-serif;
-    user-select: none;
 }
 
 .container {
@@ -27,7 +26,7 @@ body {
 .bg-image {
     background-image: url(../images/thomas-langnes-M6JMfzye72E-unsplash.jpg);
     background-size: cover;
-    min-width: min(20rem, 30%);
+    min-width: min(30rem, 50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -323,6 +322,9 @@ label {
     color: var(--red-clr)
 }
 
+.italic {
+    margin-bottom: 0.4em;
+}
 
 @media screen and (max-width: 522px) {
     .shown {
@@ -334,6 +336,10 @@ label {
         max-width: 13rem;
     }
 
+    svg {
+
+        top: 0rem;
+    }
 
 
     .down {

@@ -95,10 +95,16 @@
 				</svg>
 			</div>
 			<div class="form-container">
-				<h1>Let's do this!</h1>
+				<p class="italic">
+					<b>Remember</b>, This is a <b>demo</b> form <br />
+					more on my
+					<a href="https://github.com/ghassanelgendy" target="_blank"> GitHub</a
+					>!
+				</p>
+				<h1>Let's do this</h1>
 				<p>
 					<span class="required">*</span> indicates a required field
-					<span class="jk reddish"> They're all required obviously </span>
+					<span class="jk reddish">Obviously they're all required</span>
 				</p>
 				<form action="post" id="firstform">
 					<div class="r" id="first-name">
@@ -143,6 +149,7 @@
 							type="tel"
 							name="userphonenumber"
 							id="phonenumber"
+							minlength="9"
 							required />
 					</div>
 					<div id="passwordcontainer" class="password">
@@ -153,6 +160,7 @@
 							id="password"
 							required
 							minlength="8"
+							autocomplete="new-password"
 							pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" />
 					</div>
 					<div id="confirm-password" class="r">
@@ -162,6 +170,7 @@
 							type="password"
 							name="user-password-confirm"
 							id="confirm"
+							autocomplete="new-password"
 							required />
 					</div>
 					<div class="alerts" id="alerts" class="r">
