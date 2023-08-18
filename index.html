@@ -37,6 +37,19 @@
 		<meta name="theme-color" content="#ffffff" />
 	</head>
 	<body>
+		<script
+			src="https://code.jquery.com/jquery-3.7.0.min.js"
+			integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+			crossorigin="anonymous"></script>
+		<script>
+			$(window).on("load", function () {
+				$(".loader-wrapper").fadeOut("slow");
+			});
+		</script>
+		<div class="loader-wrapper">
+			<span class="loader"> <img src="./images/coding.png" alt="" /></span>
+			<div class="loading-text">Loading...</div>
+		</div>
 		<div class="container">
 			<div class="bg-image">
 				<svg
