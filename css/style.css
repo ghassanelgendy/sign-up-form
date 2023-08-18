@@ -47,6 +47,11 @@ svg {
     top: 9rem;
 }
 
+a {
+    position: relative;
+    z-index: 200;
+}
+
 .form-container {
     background-image: url(../images/bg.svg);
     background-repeat: repeat;
