@@ -109,7 +109,7 @@ form {
 }
 
 .loader img {
-    width: 100%;
+    width: 85%;
     flex-shrink: 0;
     height: auto;
 }
