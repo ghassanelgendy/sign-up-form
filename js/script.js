@@ -15,6 +15,15 @@ const first_form = document.getElementById("firstform");
 const login_btn = document.getElementById("login");
 let first_click = true;
 let mode = true;
+const element = document.getElementById("my-element");
+const arm = document.getElementById("my-arm");
+
+setTimeout(() => {
+	arm.classList.add("my-animation");
+}, 4000);
+setTimeout(() => {
+	element.classList.add("my-animation");
+}, 4000);
 
 first_form.addEventListener("submit", (e) => {
 	e.preventDefault();
